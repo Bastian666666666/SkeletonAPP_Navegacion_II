@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./certificaciones.component.scss'],
 })
 export class CertificacionesComponent  implements OnInit {
+  nombreCertificado: String = '';
+  fechaObtencion: String = '';
+  fechaVencimiento: String = '';
 
   constructor() { }
 

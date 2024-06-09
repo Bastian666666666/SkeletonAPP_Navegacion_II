@@ -1,34 +1,27 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-segment value="default">
+  <ion-segment-button value="default">
+    <ion-label>Mis datos</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="segment">
+    <ion-label>Certificacion</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="third">
+    <ion-label>Experiencia</ion-label>
+  </ion-segment-button>
+</ion-segment>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-segment [disabled]="true" value="disabled">
+  <ion-segment-button value="disabled">
+    <ion-label>Disabled</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="segment">
+    <ion-label>Segment</ion-label>
+  </ion-segment-button>
+</ion-segment>
 
-  <ion-list>
-    <ion-item>
-      <ion-input label="Default input"></ion-input>
-    </ion-item>
-  
-    <ion-item>
-      <ion-input label="Nombre certificado:" placeholder="Escoge en nombre del certificado"></ion-input>
-    </ion-item>
+<!-- Prueba exitosa: enviar algo estatico -->
+<app-mis-datos prueba="Probando"></app-mis-datos>
 
-    <ion-item>
-      <ion-input label="Input with placeholder" placeholder="Enter company name"></ion-input>
-    </ion-item>
-  </ion-list>
+<!-- Prueba: enviar algo dinamico -->
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+

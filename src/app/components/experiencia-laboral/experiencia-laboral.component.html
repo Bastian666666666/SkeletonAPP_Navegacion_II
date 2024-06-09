@@ -1,28 +1,37 @@
-<p>
-  experiencia-laboral works!
-</p>
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Experiencia Laboral</ion-card-title>
+  </ion-card-header>
 
-<ion-item>
-  <ion-input label="Default input"></ion-input>
+  <ion-list>
+
+    <ion-item>
+      <ion-label position="floating" style="margin-bottom: 10px;">Empresa:</ion-label>
+      <ion-input [(ngModel)]="empresa" placeholder="Escribe tu empresa"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" style="margin-bottom: 10px;">Año de inicio:</ion-label>
+      <ion-input type="text" pattern="^[0-9]{4}$" maxlength="4" placeholder="Ingrese el año en que comenzó" [(ngModel)]="anioInicio" (keypress)="soloNumeros($event)"></ion-input>
+    </ion-item>
+
+    <ion-item>
+  <ion-label>Actualmente trabajas?</ion-label>
+  <ion-select [(ngModel)]="trabajando">
+    <ion-select-option value="true">Sí</ion-select-option>
+    <ion-select-option value="false">No</ion-select-option>
+  </ion-select>
 </ion-item>
+    
+    <ion-item *ngIf="!trabajando">
+      <ion-label position="floating" style="margin-bottom: 10px;">Año de termino:</ion-label>
+      <ion-input type="text" pattern="^[0-9]{4}$" maxlength="4" placeholder="Ingrese el año en que se desvinculó" [(ngModel)]="anioTermino" (keypress)="soloNumeros($event)"></ion-input>
+    </ion-item>
 
-<ion-item>
-  <ion-input label="Empresa:" placeholder="Escribe tu empresa"></ion-input>
-</ion-item>
+    <ion-item>
+      <ion-label>Cargo</ion-label>
+      <ion-input placeholder="Selecciona tu cargo" [(ngModel)]="cargo"></ion-input>
+    </ion-item>
 
-<ion-item>
-  <ion-input label="Año de inicio" placeholder="Escribe el año en el que iniciaste"></ion-input>
-</ion-item>
-
-<ion-item>
-  <ion-input label="Actualmente trabajas?" placeholder="V/F"></ion-input>
-</ion-item>
-
-<ion-item>
-  <ion-input label="Año de termino" placeholder="Escribe el año de termino (solo si ya no trabaja)"></ion-input>
-</ion-item>
-
-<ion-item>
-  <ion-input label="Cargo" placeholder="Selecciona tu cargo"></ion-input>
-</ion-item>
-
+  </ion-list>
+</ion-card>

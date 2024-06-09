@@ -13,16 +13,18 @@ import { CertificacionesComponent } from './components/certificaciones/certifica
 // 2.2 Importe ExperienciaLaboralComponent
 import { ExperienciaLaboralComponent } from './components/experiencia-laboral/experiencia-laboral.component'; 
 
-// 2.3 Importe MisDatosComponent
-import { MisDatosComponent } from './components/mis-datos/mis-datos.component'; 
+import { FormsModule } from '@angular/forms'; //3. Importamos FormsModule para trabajar con formularios de Skeleton1
 
 @NgModule({
   declarations: [AppComponent, 
                 CertificacionesComponent, // 2.1 CertificacionesComponent sin esto no dejaba usar elementos de ionic
                 ExperienciaLaboralComponent, //2.2 ExperienciaLaboralComponent 
-                MisDatosComponent //2.3 MisDatosComponent
               ], 
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, 
+            IonicModule.forRoot(), 
+            AppRoutingModule, 
+            FormsModule //3. Importamos FormsModule
+            ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

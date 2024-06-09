@@ -1,41 +1,26 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<ion-content>
+  <ion-header>
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title>Certificaciones</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <ion-list>
-    <ion-item>
-      <ion-input label="Default input"></ion-input>
-    </ion-item>
-  
-    <ion-item>
-      <ion-input label="Nombre certificado:" placeholder="Escoge en nombre del certificado"></ion-input>
-    </ion-item>
+  <form style="margin: 20px;">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating" style="margin-bottom: 10px;">Nombre del certificado: </ion-label>
+        <ion-input type="text" minlength="3" maxlength="8" placeholder="Ingrese el nombre de la certificacion" [(ngModel)]="nombreCertificado"></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-input label="Fecha de obtencion" placeholder="Fecha en que se obtuvo"></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label position="floating" style="margin-bottom: 10px;">Fecha obtencion:</ion-label>
+        <ion-input type="date" minlength="3" maxlength="8" placeholder="Ingrese la fecha de obtencion" [(ngModel)]="fechaObtencion"></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-input label="Fecha de vencimiento" placeholder="Fecha en que vence (si es que vence)"></ion-input>
-    </ion-item>
-
-    
-  
-  </ion-list>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+      <ion-item>
+        <ion-label position="floating" style="margin-bottom: 10px;">Fecha vencimiento:</ion-label>
+        <ion-input type="date" minlength="3" maxlength="8" placeholder="Ingrese la fecha de vencimiento" [(ngModel)]="fechaVencimiento"></ion-input>
+      </ion-item>
+    </ion-list>
+  </form>
 </ion-content>
