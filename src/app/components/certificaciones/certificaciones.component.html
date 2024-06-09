@@ -5,11 +5,10 @@
     </ion-toolbar>
   </ion-header>
 
-  <form style="margin: 20px;">
     <ion-list>
       <ion-item>
         <ion-label position="floating" style="margin-bottom: 10px;">Nombre del certificado: </ion-label>
-        <ion-input type="text" minlength="3" maxlength="8" placeholder="Ingrese el nombre de la certificacion" [(ngModel)]="nombreCertificado"></ion-input>
+        <ion-input type="text" placeholder="Ingrese el nombre de la certificacion" [(ngModel)]="nombreCertificado"></ion-input>
       </ion-item>
 
       <ion-item>
@@ -22,5 +21,14 @@
         <ion-input type="date" minlength="3" maxlength="8" placeholder="Ingrese la fecha de vencimiento" [(ngModel)]="fechaVencimiento"></ion-input>
       </ion-item>
     </ion-list>
-  </form>
+
+    <div style="margin-bottom: 10px;">nombreCertificado: {{ nombreCertificado }}</div>
+    <div style="margin-bottom: 10px;">fechaObtencion: {{ fechaObtencion }}</div>
+    <div style="margin-bottom: 10px;">fechaVencimiento: {{ fechaVencimiento }}</div>
+
+
+
+
+
+
 </ion-content>

@@ -1,19 +1,30 @@
-<ion-segment value="default">
+<ion-segment [(ngModel)]="segmentValue">
   <ion-segment-button value="default">
     <ion-label>Mis datos</ion-label>
   </ion-segment-button>
+  <!--
   <ion-segment-button value="segment">
     <ion-label>Certificacion</ion-label>
   </ion-segment-button>
   <ion-segment-button value="third">
     <ion-label>Experiencia</ion-label>
   </ion-segment-button>
+  -->
 </ion-segment>
+
+<div [ngSwitch]="segmentValue">
+  <app-mis-datos *ngSwitchCase="'default'"></app-mis-datos>
+  <!--
+  <app-certificaciones *ngSwitchCase="'segment'"></app-certificaciones>
+  <app-experiencia-laboral *ngSwitchCase="'third'"></app-experiencia-laboral>
+  -->
+</div>
+
+
 
 
 <!-- Prueba exitosa: enviar algo estatico -->
-<app-mis-datos prueba="Probando"></app-mis-datos>
+<!-- <app-mis-datos prueba="Probando"></app-mis-datos> -->
 
-<!-- Prueba: enviar algo dinamico -->
 
 
