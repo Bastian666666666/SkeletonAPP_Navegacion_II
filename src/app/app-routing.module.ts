@@ -42,19 +42,17 @@ const routes: Routes = [
     pathMatch: 'full'
   },
 
-  // Esta es la pagina not-found (para el manejo del error 404)
+  // 6. Esta es la pagina not-found (para el manejo del error 404)
   {
     path: 'not-found',
     loadChildren: () => import('./pages/not-found/not-found.module').then( m => m.NotFoundPageModule)
   },
 
-// Esta es para cuando no se encuentre la ruta (404) redirija hacia la page not-found
+// 6. Esta es para cuando no se encuentre la ruta (404) redirija hacia la page not-found
 {
     path: '**',
     redirectTo: 'not-found'
 },
-
-  //! Falta una para cuando no se encuentre la ruta 404
 
 ];
 

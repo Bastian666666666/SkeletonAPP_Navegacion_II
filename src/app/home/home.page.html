@@ -1,19 +1,15 @@
-<ion-segment value="default">
+<ion-segment [(ngModel)]="segmentValue">
   <ion-segment-button value="default">
     <ion-label>Mis datos</ion-label>
   </ion-segment-button>
   <ion-segment-button value="segment">
     <ion-label>Certificacion</ion-label>
   </ion-segment-button>
-  <ion-segment-button value="third">
-    <ion-label>Experiencia</ion-label>
+  <ion-segment-button value="fourth">
+    <ion-label>Experiencia Laboral</ion-label>
   </ion-segment-button>
 </ion-segment>
 
-
-<!-- Prueba exitosa: enviar algo estatico -->
-<app-mis-datos prueba="Probando"></app-mis-datos>
-
-<!-- Prueba: enviar algo dinamico -->
-
-
+<app-mis-datos *ngIf="segmentValue === 'default'"></app-mis-datos>
+<app-certificaciones *ngIf="segmentValue === 'segment'"></app-certificaciones>
+<app-experiencia-laboral *ngIf="segmentValue === 'fourth'"></app-experiencia-laboral>

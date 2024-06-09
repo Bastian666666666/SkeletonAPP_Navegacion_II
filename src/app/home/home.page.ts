@@ -8,7 +8,9 @@ import { Component } from '@angular/core';
 export class HomePage {
 
   segmentValue = 'default';
-  enviando: String = '';
+  enviando: String = ''; //Prueba
+
+
 
   constructor() {}
   // ...
@@ -16,4 +18,6 @@ export class HomePage {
   NgOnInit() {
     // ...
   }
+
+  
 }

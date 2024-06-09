@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-mis-datos',
@@ -6,20 +6,25 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./mis-datos.component.scss'],
 })
 export class MisDatosComponent implements OnInit {
-  nombre: string = '';
+  @Input() nombre: string = '';
   @Input() apellido: string = '';
   @Input() nivelEducacion: string = '';
   @Input() fechaNacimiento: string = '';
   @Input() prueba: string = '';
+
+  @Output() nombreChange = new EventEmitter<string>();
+  @Output() apellidoChange = new EventEmitter<string>();
+  @Output() nivelEducacionChange = new EventEmitter<string>();
+  @Output() fechaNacimientoChange = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit() { }
 
   onSubmit() {
-    console.log('Nombre:', this.nombre);
-    console.log('Apellido:', this.apellido);
-    console.log('Nivel de Educación:', this.nivelEducacion);
-    console.log('Fecha de Nacimiento:', this.fechaNacimiento);
+    this.nombreChange.emit(this.nombre);
+    this.apellidoChange.emit(this.apellido);
+    this.nivelEducacionChange.emit(this.nivelEducacion);
+    this.fechaNacimientoChange.emit(this.fechaNacimiento);
   }
 }
