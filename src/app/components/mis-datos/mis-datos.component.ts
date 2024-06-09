@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./mis-datos.component.scss'],
 })
 export class MisDatosComponent implements OnInit {
-  @Input() nombre: string = '';
+  nombre: string = '';
   @Input() apellido: string = '';
   @Input() nivelEducacion: string = '';
   @Input() fechaNacimiento: string = '';
