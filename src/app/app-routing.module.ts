@@ -38,7 +38,7 @@ const routes: Routes = [
   // Esta es para cuando sea en blanco
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
 
@@ -53,6 +53,11 @@ const routes: Routes = [
     path: '**',
     redirectTo: 'not-found'
 },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
+
 
 
 ];
