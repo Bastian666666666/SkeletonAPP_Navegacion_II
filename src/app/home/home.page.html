@@ -1,25 +1,36 @@
+<!-- (8) MIS DATOS -->
+
 <ion-segment [(ngModel)]="segmentValue">
-  <ion-segment-button value="default">
+  <ion-segment-button value="primero">
     <ion-label>Mis datos</ion-label>
   </ion-segment-button>
-  <!--
-  <ion-segment-button value="segment">
+
+  <!-- (8) CERTIFICACIONES -->
+
+  <ion-segment-button value="segundo">
     <ion-label>Certificacion</ion-label>
   </ion-segment-button>
-  <ion-segment-button value="third">
+
+  <!-- (8) EXPERIENCIA -->
+
+  <ion-segment-button value="tercero">
     <ion-label>Experiencia</ion-label>
   </ion-segment-button>
-  -->
 </ion-segment>
 
-<div [ngSwitch]="segmentValue">
-  <app-mis-datos *ngSwitchCase="'default'"></app-mis-datos>
-  <!--
-  <app-certificaciones *ngSwitchCase="'segment'"></app-certificaciones>
-  <app-experiencia-laboral *ngSwitchCase="'third'"></app-experiencia-laboral>
-  -->
-</div>
+<!-- (8) MIS DATOS -->
 
+<div [ngSwitch]="segmentValue">
+  <app-mis-datos *ngSwitchCase="'primero'"></app-mis-datos>
+
+  <!-- (8) CERTIFICACIONES -->
+
+  <app-certificaciones *ngSwitchCase="'segundo'"></app-certificaciones>
+
+  <!-- (8) EXPERIENCIA -->
+
+  <app-experiencia-laboral *ngSwitchCase="'tercero'"></app-experiencia-laboral>
+</div>
 
 
 

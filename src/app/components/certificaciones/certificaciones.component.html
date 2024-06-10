@@ -1,11 +1,9 @@
-<ion-content>
   <ion-header>
     <ion-toolbar>
       <ion-title>Certificaciones</ion-title>
     </ion-toolbar>
   </ion-header>
 
-    <ion-list>
       <ion-item>
         <ion-label position="floating" style="margin-bottom: 10px;">Nombre del certificado: </ion-label>
         <ion-input type="text" placeholder="Ingrese el nombre de la certificacion" [(ngModel)]="nombreCertificado"></ion-input>
@@ -20,15 +18,7 @@
         <ion-label position="floating" style="margin-bottom: 10px;">Fecha vencimiento:</ion-label>
         <ion-input type="date" minlength="3" maxlength="8" placeholder="Ingrese la fecha de vencimiento" [(ngModel)]="fechaVencimiento"></ion-input>
       </ion-item>
-    </ion-list>
 
     <div style="margin-bottom: 10px;">nombreCertificado: {{ nombreCertificado }}</div>
     <div style="margin-bottom: 10px;">fechaObtencion: {{ fechaObtencion }}</div>
     <div style="margin-bottom: 10px;">fechaVencimiento: {{ fechaVencimiento }}</div>
-
-
-
-
-
-
-</ion-content>
