@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core'; //(9) Importamos input para poder recibir los datos de la página
 @Component({
   selector: 'app-experiencia-laboral',
   templateUrl: './experiencia-laboral.component.html',
@@ -6,15 +6,36 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ExperienciaLaboralComponent  implements OnInit {
 
-  @Input() empresa : String = ''; 
-  @Input() anioInicio : String = '';
-  @Input() trabajando: boolean = false;
-  @Input() anioTermino : String = '';
-  @Input() cargo : String = '';
+  //(9) Importamos input para poder recibir los datos
+  @Input() empresa : string = ''; 
+@Input() anioInicio : string = '';
+@Input() trabajando: boolean = false;
+@Input() anioTermino : string = '';
+@Input() cargo : string = '';
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.empresa = sessionStorage.getItem('empresa') || '';
+    this.anioInicio = sessionStorage.getItem('anioInicio') || '';
+    this.trabajando = sessionStorage.getItem('trabajando') === 'true';
+    this.anioTermino = sessionStorage.getItem('anioTermino') || '';
+    this.cargo = sessionStorage.getItem('cargo') || '';
+  }
+  
+  onSubmit() {
+    sessionStorage.setItem('empresa', this.empresa);
+    sessionStorage.setItem('anioInicio', this.anioInicio.toString());
+    sessionStorage.setItem('trabajando', this.trabajando.toString());
+    sessionStorage.setItem('anioTermino', this.anioTermino.toString());
+    sessionStorage.setItem('cargo', this.cargo);
+  
+    console.log('Empresa:', this.empresa);
+    console.log('Año de inicio:', this.anioInicio);
+    console.log('Actualmente trabajando:', this.trabajando);
+    console.log('Año de termino:', this.anioTermino);
+    console.log('Cargo:', this.cargo);
+  }
 
   // Método para que solo se ingresen números en los campos de año
   soloNumeros(event: any) {
