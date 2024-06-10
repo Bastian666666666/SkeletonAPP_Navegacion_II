@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, Input } from '@angular/core';
 @Component({
   selector: 'app-experiencia-laboral',
   templateUrl: './experiencia-laboral.component.html',
@@ -7,16 +6,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExperienciaLaboralComponent  implements OnInit {
 
-  empresa : String = ''; 
-  anioInicio : String = '';
-  trabajando: boolean = false;
-  anioTermino : String = '';
-  cargo : String = '';
+  @Input() empresa : String = ''; 
+  @Input() anioInicio : String = '';
+  @Input() trabajando: boolean = false;
+  @Input() anioTermino : String = '';
+  @Input() cargo : String = '';
 
   constructor() { }
 
   ngOnInit() {}
 
+  // Método para que solo se ingresen números en los campos de año
   soloNumeros(event: any) {
     const pattern = /[0-9]/;
     let inputChar = String.fromCharCode(event.charCode);

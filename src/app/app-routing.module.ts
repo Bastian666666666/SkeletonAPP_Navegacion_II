@@ -54,7 +54,6 @@ const routes: Routes = [
     redirectTo: 'not-found'
 },
 
-  //! Falta una para cuando no se encuentre la ruta 404
 
 ];
 
