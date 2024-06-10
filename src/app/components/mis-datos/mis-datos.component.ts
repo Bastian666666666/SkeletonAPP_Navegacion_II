@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./mis-datos.component.scss'],
 })
 export class MisDatosComponent implements OnInit {
-  nombre: string = '';
+  @Input() nombre: string = '';
   @Input() apellido: string = '';
   @Input() nivelEducacion: string = '';
   @Input() fechaNacimiento: string = '';
@@ -14,12 +14,23 @@ export class MisDatosComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() { }
-
+  ngOnInit() {
+    this.nombre = sessionStorage.getItem('nombre') || '';
+    this.apellido = sessionStorage.getItem('apellido') || '';
+    this.nivelEducacion = sessionStorage.getItem('nivelEducacion') || '';
+    this.fechaNacimiento = sessionStorage.getItem('fechaNacimiento') || '';
+  }
+  
   onSubmit() {
+    sessionStorage.setItem('nombre', this.nombre);
+    sessionStorage.setItem('apellido', this.apellido);
+    sessionStorage.setItem('nivelEducacion', this.nivelEducacion);
+    sessionStorage.setItem('fechaNacimiento', this.fechaNacimiento);
+  
     console.log('Nombre:', this.nombre);
     console.log('Apellido:', this.apellido);
-    console.log('Nivel de Educación:', this.nivelEducacion);
-    console.log('Fecha de Nacimiento:', this.fechaNacimiento);
+    console.log('Nivel de educación:', this.nivelEducacion);
+    console.log('Fecha de nacimiento:', this.fechaNacimiento);
   }
+
 }

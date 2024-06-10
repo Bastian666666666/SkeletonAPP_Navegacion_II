@@ -19,6 +19,9 @@
         <ion-input type="date" minlength="3" maxlength="8" placeholder="Ingrese la fecha de vencimiento" [(ngModel)]="fechaVencimiento"></ion-input>
       </ion-item>
 
+      <!--Boton de guardar-->
+      <ion-button (click)="onSubmit()">Guardar</ion-button>
+
     <div style="margin-bottom: 10px;">nombreCertificado: {{ nombreCertificado }}</div>
     <div style="margin-bottom: 10px;">fechaObtencion: {{ fechaObtencion }}</div>
     <div style="margin-bottom: 10px;">fechaVencimiento: {{ fechaVencimiento }}</div>

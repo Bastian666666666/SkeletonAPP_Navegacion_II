@@ -16,6 +16,18 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
 
+  // Esta es para cuando sea en blanco
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
+
   //1.1 Agrego la ruta a certificaciones como component y le llamo certificacionesComponent 
   {
     path: 'certificaciones', 
@@ -23,23 +35,15 @@ const routes: Routes = [
   },
 
   //1.2 Agrego la ruta a experiencia-laboral como component y le llamo ExperienciaLaboralComponent 
-
   {
     path: 'experiencia-laboral', 
     component: ExperienciaLaboralComponent
   },
 
-    //1.3 Agrego la ruta a experiencia-laboral como component y le llamo ExperienciaLaboralComponent 
+  //1.3 Agrego la ruta a experiencia-laboral como component y le llamo ExperienciaLaboralComponent 
   {
     path: 'mis-datos', 
     component: MisDatosComponent
-  },
-
-  // Esta es para cuando sea en blanco
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
   },
 
   // Esta es la pagina not-found (para el manejo del error 404)
@@ -48,13 +52,11 @@ const routes: Routes = [
     loadChildren: () => import('./pages/not-found/not-found.module').then( m => m.NotFoundPageModule)
   },
 
-// Esta es para cuando no se encuentre la ruta (404) redirija hacia la page not-found
-{
+  // Esta es para cuando no se encuentre la ruta (404) redirija hacia la page not-found
+  {
     path: '**',
     redirectTo: 'not-found'
-},
-
-
+  },
 ];
 
 @NgModule({

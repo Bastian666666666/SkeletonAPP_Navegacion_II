@@ -13,6 +13,22 @@ export class CertificacionesComponent  implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
+  onSubmit() {
+    // Guarda los valores en sessionStorage
+    sessionStorage.setItem('nombreCertificado', this.nombreCertificado);
+    sessionStorage.setItem('fechaObtencion', this.fechaObtencion);
+    sessionStorage.setItem('fechaVencimiento', this.fechaVencimiento);
+  
+    console.log('Nombre del certificado:', this.nombreCertificado);
+    console.log('Fecha de obtención:', this.fechaObtencion);
+    console.log('Fecha de vencimiento:', this.fechaVencimiento);
+  }
+  
+  ngOnInit() {
+    // Recupera los valores de sessionStorage
+    this.nombreCertificado = sessionStorage.getItem('nombreCertificado') || '';
+    this.fechaObtencion = sessionStorage.getItem('fechaObtencion') || '';
+    this.fechaVencimiento = sessionStorage.getItem('fechaVencimiento') || '';
+  }
 
 }
