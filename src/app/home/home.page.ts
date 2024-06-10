@@ -7,8 +7,9 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  segmentValue = 'default';
-  enviando: String = '';
+  segmentValue: string = 'primero'; // Sirve para el segment, establece 'primero' como valor inicial
+  enviando: String = ''; //Prueba
+  
 
   constructor() {}
   // ...
