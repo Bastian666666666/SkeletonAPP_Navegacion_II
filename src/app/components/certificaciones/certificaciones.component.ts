@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core'; //(9) Importamos input para poder recibir los datos de la página
 
 @Component({
   selector: 'app-certificaciones',
@@ -6,9 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./certificaciones.component.scss'],
 })
 export class CertificacionesComponent  implements OnInit {
-  nombreCertificado: String = '';
-  fechaObtencion: String = '';
-  fechaVencimiento: String = '';
+  //(9) Importamos input para poder recibir los datos
+  @Input() nombreCertificado: string = '';
+  @Input() fechaObtencion: string = '';
+  @Input() fechaVencimiento: string = '';
 
   constructor() { }
 
