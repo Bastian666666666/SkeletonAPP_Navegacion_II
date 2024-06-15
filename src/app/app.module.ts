@@ -9,6 +9,9 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { FormsModule } from '@angular/forms'; //3. Importamos FormsModule para trabajar con formularios de Skeleton1
 
+import { SQLite } from '@awesome-cordova-plugins/sqlite/ngx'; //15. importamos el sqlite
+
+
 @NgModule({
   declarations: [AppComponent], 
   imports: [BrowserModule, 
@@ -16,7 +19,10 @@ import { FormsModule } from '@angular/forms'; //3. Importamos FormsModule para t
             AppRoutingModule, 
             FormsModule //3. Importamos FormsModule
             ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: 
+                RouteReuseStrategy, 
+                useClass: IonicRouteStrategy}, 
+                SQLite], //15. Agregamos SQLite a los providers
   bootstrap: [AppComponent],
 })
 export class AppModule {}
