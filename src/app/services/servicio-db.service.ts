@@ -8,11 +8,11 @@ import { Noticias } from './noticias';
   providedIn: 'root'
 })
 export class DbserviceService {
-  public database: SQLiteObject;
+  public database!: SQLiteObject; //16. Agregue el signo de exclamacion para que no de error al  pedir datos
 
   tablaNoticias: string = "CREATE TABLE IF NOT EXISTS noticia(id INTEGER PRIMARY KEY autoincrement, titulo VARCHAR(50) NOT NULL, texto TEXT NOT NULL);";
   registro: string = "INSERT or IGNORE INTO noticia(id, titulo, texto) VALUES (1, 'Titulo noticia', 'Texto de la noticia que se quiere mostrar');";
-  listaNoticias = new BehaviorSubject([]);
+  listaNoticias = new BehaviorSubject<Noticias[]>([]); //!16. Agregue <Noticias[]> porque no ñp reconocia al no estar inicializado
 
   private isDbReady: BehaviorSubject<boolean> = new BehaviorSubject(false);
   constructor(private sqlite: SQLite, private platform: Platform, public toastController: ToastController) {
@@ -20,16 +20,15 @@ export class DbserviceService {
 
   }
 
-  addNoticia(titulo,texto){
-    let data=[titulo,texto];
-    return this.database.executeSql('INSERT INTO noticia(titulo,texto) VALUES(?,?)',data)
-    .then(res =>{
-      this.buscarNoticias();
-    })
-
+  addNoticia(titulo: string, texto: string) { //!16. agregue el tipo de dato a string
+    let data = [titulo, texto];
+    return this.database.executeSql('INSERT INTO noticia(titulo, texto) VALUES(?, ?)', data)
+      .then(res => {
+        this.buscarNoticias();
+      });
   }
 
-  updateNoticia(id, titulo, texto){
+  updateNoticia(id: String, titulo: String, texto: String){ //!16. agregue el tipo de dato a String
     let data = [titulo, texto, id];
     return this.database.executeSql('UPDATE noticia SET titulo = ?, texto = ? WHERE id = ?', data)
     .then(data2 =>{
@@ -39,7 +38,7 @@ export class DbserviceService {
     
     }
 
-  deleteNoticia(id){
+  deleteNoticia(id: number){ //!16. agregue el tipo de dato de id a number
     return this.database.executeSql('DELETE FROM noticia WHERE id = ?', [id])
     .then(a =>{
       this.buscarNoticias();
