@@ -14,6 +14,7 @@ export class MisDatosComponent implements OnInit {
 
   constructor() { }
 
+  //(12)Hago que los datos se guarden aca para que no se pierdan al cambiar de pagina
   ngOnInit() {
     this.nombre = sessionStorage.getItem('nombre') || '';
     this.apellido = sessionStorage.getItem('apellido') || '';
@@ -21,6 +22,7 @@ export class MisDatosComponent implements OnInit {
     this.fechaNacimiento = sessionStorage.getItem('fechaNacimiento') || '';
   }
   
+  //(12) Método para guardar los datos en el sessionStorage
   onSubmit() {
     sessionStorage.setItem('nombre', this.nombre);
     sessionStorage.setItem('apellido', this.apellido);

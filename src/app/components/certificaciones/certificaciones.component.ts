@@ -13,6 +13,7 @@ export class CertificacionesComponent  implements OnInit {
 
   constructor() { }
 
+  //(12) Método para guardar los datos en el sessionStorage con el boton de guardar
   onSubmit() {
     // Guarda los valores en sessionStorage
     sessionStorage.setItem('nombreCertificado', this.nombreCertificado);
@@ -23,7 +24,7 @@ export class CertificacionesComponent  implements OnInit {
     console.log('Fecha de obtención:', this.fechaObtencion);
     console.log('Fecha de vencimiento:', this.fechaVencimiento);
   }
-  
+  //(12) para que no se pierdan los datos de sessionStorage al cambiar de página
   ngOnInit() {
     // Recupera los valores de sessionStorage
     this.nombreCertificado = sessionStorage.getItem('nombreCertificado') || '';

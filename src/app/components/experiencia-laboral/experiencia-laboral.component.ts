@@ -15,6 +15,7 @@ export class ExperienciaLaboralComponent  implements OnInit {
 
   constructor() { }
 
+  //(12) para que no se pierdan los datos de sessionStorage al cambiar de página
   ngOnInit() {
     this.empresa = sessionStorage.getItem('empresa') || '';
     this.anioInicio = sessionStorage.getItem('anioInicio') || '';
@@ -23,6 +24,7 @@ export class ExperienciaLaboralComponent  implements OnInit {
     this.cargo = sessionStorage.getItem('cargo') || '';
   }
   
+  //(12) Método para guardar los datos en el sessionStorage
   onSubmit() {
     sessionStorage.setItem('empresa', this.empresa);
     sessionStorage.setItem('anioInicio', this.anioInicio.toString());
